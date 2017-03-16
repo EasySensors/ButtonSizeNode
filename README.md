@@ -38,7 +38,7 @@ How to use it as home automation (IOT) node controller
 
 ButtonSizeNode.ino is the Arduino example sketch using [MySensors](https://www.mysensors.org/) API. 
 
-To turn these nodes into home automation network you need at least two Nodes one as a node and the other one as “Gateway Serial” and connect them to a controller (I personally love [Domoticz](https://domoticz.com/)). However, for very simple setup you can use 3 nodes - one node as gateway, node as relay and last one as switch. No controller needed then.
+To turn these nodes into home automation network you need at least two Nodes one as a node and the other one as “Gateway Serial” and connect them to a controller (I personally love [Domoticz](https://domoticz.com/)). However, for no-controller setup you can use 3 nodes - one node as gateway, node as relay and last one as switch. No controller needed then.
 
 Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Arduino sketch:
 Define which radio we use – RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios. 
