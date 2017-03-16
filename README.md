@@ -78,7 +78,8 @@ Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board and burn the sk
 
 > How to “personalize” nodes with encryption key - 3 easy steps as usual )
 
-**Step 1**
+
+**Step 1 - generate MY_HMAC_KEY**
 
 Open SecurityPersonalizer.ino from MySensors examples.
  Comment out lines:
@@ -90,12 +91,12 @@ Upload sketch to the node and open serial monitor. Copy #define MY_HMAC_KEY 0x b
 
 ![open serial monitor and copy #define MY_HMAC_KEY 0x blah blah blah](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/personalization.jpg?raw=true)
 
-**Step 2**
+**Step 2 - save MY_HMAC_KEY **
 
 Put #define MY_HMAC_KEY  into here 
 ![Put it here ](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/personalization1.jpg?raw=true)
 
-**Step 3**
+**Step 3 - write MY_HMAC_KEY**
 
 unconment
 ```c++
