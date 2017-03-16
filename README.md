@@ -76,11 +76,6 @@ After that, you have to “personalize” all the nodes, which have those, defin
 Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board and burn the sketch.
 
 
-----------
-
-
-
-
 > How to “personalize” nodes with encryption key - 3 easy steps as usual )
 
 **Step 1**
