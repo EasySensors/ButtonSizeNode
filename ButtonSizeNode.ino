@@ -102,7 +102,6 @@ void presentation()
   sendSketchInfo("ButtonSize node", "111.0");
 
   // Register all sensors to gw (they will be created as child devices)
-  present(RELAY_sensor, S_LIGHT);
   present(HUM_sensor, S_HUM);
   present(TEMP_sensor, S_TEMP);
   present(VIS_sensor, S_LIGHT_LEVEL);
