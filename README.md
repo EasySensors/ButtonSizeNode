@@ -7,12 +7,14 @@
  - High Accuracy Temperature Sensor ±0.4 °C (max), –10 to 85 °C
  - Precision Relative Humidity Sensor ± 3% RH (max), 0–80% RH
  - Light sensor BH1750,  spectral responsibility is approximately human eye response.
- - Atmel ATSHA204A Crypto Authentication Chip
+ - Authentication security - Atmel ATSHA204A Crypto Authentication Chip
  - External JDEC EPROM
  - RFM69-HW (high power version) or HC (low power consumption version) 433 MHz Radio transceiver
  - Battery voltage sensor (via divider)
  - Supply voltage up to 6.5 Volts
  - The Digital and Analog pins are 3.3 volts
+ - Battery connector CR2032 240mAh
+ 
 
 **For Indoor Use Only**
  
@@ -22,7 +24,7 @@
 Arduino Pins|	Description
 ------------|--------------
 A0, A1, A2 |	Available ARDUINO analog GPIO / DIGITAL GPIO
-A6 |	Battery voltage sensor (via divider)
+A6 |	Connected to Battery voltage sensor (via divider)
 A4 |	Connected to si1132 and bh1750 SDA 
 A5 |	Connected to si1132 and bh1750 SCL
 A3 |	Connected to  ATSHA204A
@@ -30,6 +32,9 @@ D3, D4, D5, D6,D7, D9 |	Available ARDUINO digital GPIO
 D8 |	Connected to CS FLASH chip (OTA) M25P40
 MISO, MOSI, SCK, RST |	Connected to ISP header
 ANT |	RFM69 antenna
+Bat+ | Unregulated power up to 6.5 Volts
+Gnd | Ground
+Scissors line | you cat cut sensors and battery holder if you need just controller and radio
 
 
 How to use it as home automation (IOT) node controller
@@ -41,7 +46,7 @@ ButtonSizeNode.ino is the Arduino example sketch using [MySensors](https://www.m
 To turn these nodes into home automation network you need at least two Nodes one as a node and the other one as “Gateway Serial” and connect them to a controller (I personally love [Domoticz](https://domoticz.com/)). However, for no-controller setup you can use 3 nodes - one node as gateway, node as relay and last one as switch. No controller needed then.
 
 Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Arduino sketch:
-Define which radio we use – RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios. 
+Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out this  #define MY_IS_RFM69HW 
 ```c++
 // Enable and select radio type attached
 #define MY_RADIO_RFM69
@@ -54,8 +59,8 @@ Define Node address. I prefer to use static addresses and in Hexadecimal since i
 ```
 However, you can use AUTO instead of the hardcoded number (like 0xE0) though.  [Domoticz](https://domoticz.com/) will automatically assign node ID then.
 
-Define OTA feature. OTA stands for “Over The Air firmware updates”. If your node does not utilize Sleep mode you can send new “firmware” (compiled sketch) by air. **Here is the link on how to do it.**
-For OTA we use JDEC Flash chip where the node stores new firmware and once it received and control Sum is correct it reboots and flashes your new code into the node controller. So we define it is erase type 0x2020 here. This define should be as below: 
+Define OTA feature. OTA stands for “Over The Air firmware updates”. If your node does not utilize Sleep mode you can send new “firmware” (compiled sketch binary) by air. **Here is the link on how to do it.**
+For OTA we use JDEC Flash chip where the node stores new firmware and once it received and control sum (CRC) is correct it reboots and flashes your new code into the node controller. So we define it is "erase type" as 0x2020 here. This define should be as below: 
 
 ```c++
 #define MY_OTA_FIRMWARE_FEATURE
