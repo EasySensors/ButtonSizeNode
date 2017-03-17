@@ -4,7 +4,7 @@ Security "personalization" How To for MySensors SecurityPersonalizer.ino sketch
 
 Very detailed explanation you can find here : [Signing support created by Patrick "Anticimex" Fallberg](https://www.mysensors.org/about/signing)
 
-If you do not want to dive deep into it, just follow these **3 steps**:
+If you do not want to dive deep into it, just follow these **3 steps**. Assume you know what is the Arduiono IDE and the serial monitor from the Arduiono IDE:
 
 **Step 1 - generate random MY_HMAC_KEY**
 
@@ -17,7 +17,7 @@ Open SecurityPersonalizer.ino from MySensors examples.
 //#define USER_KEY
 //#define SKIP_UART_CONFIRMATION
 ```
-Upload sketch to the node and open serial monitor. Copy #define MY_HMAC_KEY 0x blah blah blah
+Upload sketch to the node and open the serial monitor. Copy from the serial monitor #define MY_HMAC_KEY 0x blah blah blah
 
 ![open serial monitor and copy #define MY_HMAC_KEY 0x blah blah blah](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/personalization.jpg?raw=true)
 
