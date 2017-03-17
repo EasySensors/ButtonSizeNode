@@ -15,12 +15,8 @@
  - The Digital and Analog pins are 3.3 volts
  - Battery connector CR2032 240mAh
 
-![Arduino IDE Settings](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/IDEsettings.jpg?raw=true)
 
-
-**For Indoor Use Only**
- 
- Pin out: 
+**Pin out:** 
 
 
 Arduino Pins|	Description
@@ -37,6 +33,12 @@ ANT |	RFM69 antenna
 Bat+ | Unregulated power up to 6.5 Volts
 Gnd | Ground
 Scissors line | you cat cut sensors and battery holder if you need just controller and radio
+
+
+**Arduino IDE Settings**
+
+![Arduino IDE Settings](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/IDEsettings.jpg?raw=true)
+
 
 
 How to use it as home automation (IOT) node controller
