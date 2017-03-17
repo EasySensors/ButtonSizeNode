@@ -8,7 +8,7 @@ If you do not want to dive deep into it, just follow these **3 steps**. Assume y
 
 **Step 1 - generate random MY_HMAC_KEY**
 
-> You can skip **Step 1** by filling some numbers instead of zeroes in ```#define MY_HMAC_KEY 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00.......    in SecurityPersonalizer.ino```
+> You can skip **Step 1** by filling some numbers instead of zeroes in SecurityPersonalizer.ino ```#define MY_HMAC_KEY 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00....... ```
 
 
 Open SecurityPersonalizer.ino from MySensors examples.
