@@ -4,7 +4,7 @@ Security "personalization" How To for MySensors SecurityPersonalizer.ino sketch
 
 Very detailed explanation you can find here : [Signing support created by Patrick "Anticimex" Fallberg](https://www.mysensors.org/about/signing)
 
-If you do not want to dive deep into it, just follow these **3 steps**. Assume you know what is the Arduiono IDE and the serial monitor from the Arduiono IDE:
+If you do not want to dive deep into it, just follow these **3 steps**. Assume you know what is the Arduiono IDE and the Serial Monitor from the Arduiono IDE:
 
 **Step 1 - generate random MY_HMAC_KEY**
 
