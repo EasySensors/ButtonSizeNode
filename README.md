@@ -73,7 +73,7 @@ If you would like to use Crypto Authentication to secure your nodes from intrude
 ```
 After that, you have to “personalize” all the nodes, which have those, defines enabled. [**How to “personalize” nodes with encryption key**](https://github.com/EasySensors/ButtonSizeNode/blob/master/SecurityPersonalizationHowTo.md)
 
-Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board and burn the sketch.
+Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board and burn the ButtonSizeNode.ino sketch.
 
 **Done**
 
