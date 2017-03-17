@@ -14,6 +14,8 @@
  - Supply voltage up to 6.5 Volts
  - The Digital and Analog pins are 3.3 volts
  - Battery connector CR2032 240mAh
+ - Arduino IDE settings 
+ 
  
 
 **For Indoor Use Only**
