@@ -91,7 +91,7 @@ Upload sketch to the node and open serial monitor. Copy #define MY_HMAC_KEY 0x b
 
 ![open serial monitor and copy #define MY_HMAC_KEY 0x blah blah blah](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/personalization.jpg?raw=true)
 
-**Step 2 - save MY_HMAC_KEY **
+**Step 2 - save MY_HMAC_KEY**
 
 Put #define MY_HMAC_KEY  into here 
 ![Put it here ](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/personalization1.jpg?raw=true)
@@ -108,8 +108,8 @@ Upload sketch to the node
 
 Done!
 
+>Even more details, schematic:
 
-----------
-
+![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/schematic.jpg?raw=true)
 
 The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/Koresh) 
