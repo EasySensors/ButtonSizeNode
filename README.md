@@ -71,42 +71,11 @@ If you would like to use Crypto Authentication to secure your nodes from intrude
 ```c++
 #define MY_SIGNING_ATSHA204
 ```
-After that, you have to “personalize” all the nodes, which have those, defines enabled. **How to “personalize” nodes with encryption key**
+After that, you have to “personalize” all the nodes, which have those, defines enabled. [**How to “personalize” nodes with encryption key**](https://github.com/EasySensors/ButtonSizeNode/blob/master/SecurityPersonalizationHowTo.md)
 
 Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board and burn the sketch.
 
-
-> How to “personalize” nodes with encryption key - 3 easy steps as usual )
-
-
-**Step 1 - generate MY_HMAC_KEY**
-
-Open SecurityPersonalizer.ino from MySensors examples.
- Comment out lines:
-```c++
-//#define USER_KEY
-//#define SKIP_UART_CONFIRMATION
-```
-Upload sketch to the node and open serial monitor. Copy #define MY_HMAC_KEY 0x blah blah blah
-
-![open serial monitor and copy #define MY_HMAC_KEY 0x blah blah blah](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/personalization.jpg?raw=true)
-
-**Step 2 - save MY_HMAC_KEY**
-
-Put #define MY_HMAC_KEY  into here 
-![Put it here ](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/personalization1.jpg?raw=true)
-
-**Step 3 - write MY_HMAC_KEY**
-
-unconment
-```c++
-#define LOCK_CONFIGURATION
-#define USER_KEY
-#define SKIP_UART_CONFIRMATION
-```
-Upload sketch to the node 
-
-Done!
+**Done**
 
 >Even more details, schematic:
 
