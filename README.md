@@ -14,9 +14,9 @@
  - Supply voltage up to 6.5 Volts
  - The Digital and Analog pins are 3.3 volts
  - Battery connector CR2032 240mAh
- - Arduino IDE settings 
+ - ![Arduino IDE settings]({{site.baseurl}}/https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/IDEsettings.jpg?raw=true)
  
- 
+
 
 **For Indoor Use Only**
  
@@ -83,4 +83,4 @@ Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board and burn the Bu
 
 ![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/schematic.jpg?raw=true)
 
-The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/Koresh) 
+The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/Koresh)
