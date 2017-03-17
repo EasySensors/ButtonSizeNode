@@ -6,7 +6,7 @@ Very detailed explanation you can find here : [Signing support created by Patric
 
 If you do not want to dive deep into it, just follow these **3 steps**:
 
-**Step 1 - generate MY_HMAC_KEY**
+**Step 1 - generate random MY_HMAC_KEY**
 
 > You can skip **Step 1** by filling some numbers instead of zeroes in ```#define MY_HMAC_KEY 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00....... ```
 
