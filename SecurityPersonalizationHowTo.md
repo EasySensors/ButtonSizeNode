@@ -8,6 +8,9 @@ Very detailed explanation you can find here : [Signing support created by Patric
 
 **Step 1 - generate MY_HMAC_KEY**
 
+> You can skip **Step 1** by filling some numbers instead of zeroes in ```#define MY_HMAC_KEY 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00....... ```
+
+
 Open SecurityPersonalizer.ino from MySensors examples.
  Comment out lines:
 ```c++
@@ -35,6 +38,5 @@ Unconment
 ```
 Upload sketch to the node 
 
-> You can skip **Step 1** by filling some numbers instead of zeroes in ```#define MY_HMAC_KEY 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00....... ```
 
 Done!
