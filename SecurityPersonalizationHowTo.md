@@ -1,4 +1,4 @@
-Security "personalization" How To for MySensors SecurityPersonalizer.ino sketch
+Security "personalization" for MySensors SecurityPersonalizer.ino sketch How To
 ------------------------------------------------------------------------
 
 
