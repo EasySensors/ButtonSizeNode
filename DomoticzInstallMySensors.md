@@ -22,4 +22,6 @@ Connect Gateway Serial into any RaspberryPi USB.
 **Step 4.**
 ****
 
-Add the Gateway Serial as new [hardware device](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizHrdwre.jpg?raw=true) 
+Add the Gateway Serial as new **hardware device**  press and choose appropriete marked as 1 trhough 7 
+
+![hardware device](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizHrdwre.jpg?raw=true)
