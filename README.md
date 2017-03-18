@@ -72,7 +72,6 @@ However, you can use AUTO instead of the hardcoded number (like 0xE0) though.  [
 
 Define OTA feature. OTA stands for “Over The Air firmware updates”. If your node does not utilize Sleep mode you can send new “firmware” (compiled sketch binary) by air. **Here is the link on how to do it.**
 For OTA we use JDEC Flash chip where the node stores new firmware and once it received and control sum (CRC) is correct it reboots and flashes your new code into the node controller. So we define it is "erase type" as 0x2020 here. This define should be as below: 
-
 ```c++
 #define MY_OTA_FIRMWARE_FEATURE
 #define MY_OTA_FLASH_JDECID 0x2020
