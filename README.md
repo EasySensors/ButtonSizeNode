@@ -56,7 +56,7 @@ To turn these nodes into home automation network you need at least two Nodes one
 
 Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Arduino sketch:
 
-Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out this // #define MY_IS_RFM69HW 
+Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out line with // #define MY_IS_RFM69HW 
 ```c++
 // Enable and select radio type attached
 #define MY_IS_RFM69HW 
