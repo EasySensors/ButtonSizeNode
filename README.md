@@ -53,16 +53,18 @@ ButtonSizeNode.ino is the Arduino example sketch using [MySensors](https://www.m
 
 To turn these nodes into home automation network you need at least two Nodes one as a node and the other one as “Gateway Serial” and connect them to a controller (I personally love [Domoticz](https://domoticz.com/)). However, for no-controller setup, as example, you can use 3 nodes - one node as “Gateway Serial”, node as, say relay and one as switch for that relay. No controller needed then, keep the switch and the relay on the same address and the switch will operate the relay.
 
-Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Arduino sketch:
+Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Arduino sketch: | Coments
+---|---
 
-Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out line with // #define MY_IS_RFM69HW 
 ```c++
-// Enable and select radio type attached
-#define MY_IS_RFM69HW 
-#define MY_RADIO_RFM69
-#define MY_RFM69_FREQUENCY   RF69_433MHZ
-#define MY_IS_RFM69HW
+// Enable and select radio type attached 
+#define MY_IS_RFM69HW <br>
+#define MY_RADIO_RFM69 <br>
+#define MY_RFM69_FREQUENCY   RF69_433MHZ <br>
+#define MY_IS_RFM69HW <br>
 ```
+<br> | Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out line with // #define MY_IS_RFM69HW 
+
 Define Node address. I prefer to use static addresses and in Hexadecimal since it is easier to identify the node address in  [Domoticz](https://domoticz.com/) devices list after it will be discovered by controller ( [Domoticz](https://domoticz.com/)).
 ```c++
 #define MY_NODE_ID 0xE0
