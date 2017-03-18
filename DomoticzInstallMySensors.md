@@ -22,6 +22,6 @@ Connect Gateway Serial into any RaspberryPi USB.
 **Step 4.**
 ****
 
-Add the Gateway Serial as new **hardware device**  press and choose appropriete marked as 1 trhough 7 
+Open Domoticz web interface and choose marked 1 through 7 to setup the Gateway Serial as new **hardware device**  
 
 ![hardware device](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizHrdwre.jpg?raw=true)
