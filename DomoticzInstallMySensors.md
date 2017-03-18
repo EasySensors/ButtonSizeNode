@@ -32,7 +32,7 @@ In selection #7 choose 38400 if you use 8 MHz Arduino and 115200 if you use 16MH
 **Step 5.**
 ****
 
-![](/https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList1.jpg?raw=true)
-![](/https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList.jpg?raw=true)
+![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList1.jpg?raw=true)
+![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList.jpg?raw=true)
 
 
