@@ -39,3 +39,5 @@ Find and your nodes. Addreses you select in the Arduino sketch
 
 
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList.jpg?raw=true)
+
+**Done**
