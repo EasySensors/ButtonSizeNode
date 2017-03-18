@@ -31,8 +31,9 @@ In selection #7 choose 38400 if you use 8 MHz Arduino and 115200 if you use 16MH
 
 **Step 5.**
 ****
-
+**Open Device list**
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList1.jpg?raw=true)
+
+**Find and your nodes. Addreses you select in the Arduino sketch**
+
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList.jpg?raw=true)
-
-
