@@ -2,7 +2,7 @@
 
 ![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/bttnsz.jpg?raw=true)
 
-## The Button Size Node is a low cost wireless Arduino based (the Atmel ATMega328P) microcontroller, replacing this setup:
+## The Button Size Node is a low cost wireless Arduino based (the Atmel ATMega328P) microcontroller with RFM 69 HW(CW) radio on board and few other nice additions. Check Specs below. It replaces this setup:
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/replce.jpg?raw=true)
 
 ## Specification: ##
