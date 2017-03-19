@@ -60,21 +60,10 @@ Arduino Pins|	Description
 ------------|--------------
 #define MY_RADIO_RFM69<br>#define MY_RFM69_FREQUENCY   RF69_433MHZ<br>#define MY_IS_RFM69HW|	Define which radio we use – here is RFM 69<br>with frequency 433 MHZ and it is HW<br>type – one of the most powerful RFM 69 radios.<br>If your radio is RFM69CW - comment out line<br>with // #define MY_IS_RFM69HW 
 
-Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out line with // #define MY_IS_RFM69HW 
-
-```c++
-// Enable and select radio type attached 
-#define MY_IS_RFM69HW
-#define MY_RADIO_RFM69
-#define MY_RFM69_FREQUENCY   RF69_433MHZ
-#define MY_IS_RFM69HW
-```  
-
-Define Node address. I prefer to use static addresses and in Hexadecimal since it is easier to identify the node address in  [Domoticz](https://domoticz.com/) devices list after it will be discovered by controller ( [Domoticz](https://domoticz.com/)).
-```c++
-#define MY_NODE_ID 0xE0
-```
+#define MY_NODE_ID 0xE0 | Define Node address. I prefer to use static addresses and in Hexadecimal since it is easier to identify the node address in  [Domoticz](https://domoticz.com/) devices list after it will be discovered by controller ( [Domoticz](https://domoticz.com/)).
 However, you can use AUTO instead of the hardcoded number (like 0xE0) though.  [Domoticz](https://domoticz.com/) will automatically assign node ID then.
+
+
 
 Define OTA feature. OTA stands for “Over The Air firmware updates”. If your node does not utilize Sleep mode you can send new “firmware” (compiled sketch binary) by air. **Here is the link on how to do it.**
 For OTA we use JDEC Flash chip where the node stores new firmware and once it received and control sum (CRC) is correct it reboots and flashes your new code into the node controller. So we define it is "erase type" as 0x2020 here. This define should be as below: 
