@@ -58,10 +58,10 @@ Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Ardui
 
 Arduino Pins|	Description
 ------------|--------------
-```#define MY_IS_RFM69HW |
-#define MY_RADIO_RFM69 |
-#define MY_RFM69_FREQUENCY   RF69_433MHZ |
-#define MY_IS_RFM69H```|	Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out line with // #define MY_IS_RFM69HW 
+*#define MY_IS_RFM69HW 
+#define MY_RADIO_RFM69
+#define MY_RFM69_FREQUENCY   RF69_433MHZ
+#define MY_IS_RFM69H* |	Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out line with // #define MY_IS_RFM69HW 
 
 Define which radio we use – here is RFM 69 with frequency 433 MHZ and it is HW type – one of the most powerful RFM 69 radios.  If your radio is RFM69CW - comment out line with // #define MY_IS_RFM69HW 
 
