@@ -2,7 +2,7 @@
 
 Hardware we need: 
 - 1 Raspberry PI2 or newer.
-- 2 Two Arduinos or any clones with Radio attached (RFM 69 or NRF24). In this How To I will use [ButtonSizeNode](https://github.com/EasySensors/ButtonSizeNode) as Gateway Serial for MySensors network.
+- 2 Two Arduinos or any clones with Radio (RFM 69 or NRF24) attached . In this How To I will use [ButtonSizeNode](https://github.com/EasySensors/ButtonSizeNode) as Gateway Serial for MySensors network.
 
 **Step 1.**
 
