@@ -1,4 +1,4 @@
-## MySensors Nodes use [Domoticz](https://domoticz.com/) as Controller running Raspberry PI. How To###
+## MySensors Nodes use [Domoticz](https://domoticz.com/) as Controller running Raspberry PI. How To##
 
 Hardware we need: 
 - 1 Raspberry PI2 or newer.
