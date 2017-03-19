@@ -37,7 +37,7 @@ Open Device list
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList1.jpg?raw=true)
 
 
-Power up Sensor Node. Find and your node addreses you select in the Arduino sketch
+Power up Sensor Node. Find the node addreses in the device list below. Add it to the Domoticz.
 
 
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList.jpg?raw=true)
