@@ -37,7 +37,7 @@ Open Device list
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList1.jpg?raw=true)
 
 
-Power up Sensor Node (Sketch for this node could be [ButtonSizeNode.ino](https://github.com/EasySensors/ButtonSizeNode). Find the node addreses in the device list below. Add it to the Domoticz.
+Power up Sensor Node (Sketch for this node could be [ButtonSizeNode.ino](https://github.com/EasySensors/ButtonSizeNode) ). Find the node addreses in the device list below. Add it to the Domoticz.
 
 
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/domotizDevicesList.jpg?raw=true)
