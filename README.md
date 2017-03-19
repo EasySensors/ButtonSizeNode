@@ -2,7 +2,8 @@
 
 ![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/bttnsz.jpg?raw=true)
 
-## The Button Size Node is a low cost wireless Arduino IDE compatible (the Atmel ATMega328P) microcontroller with RFM 69 HW(CW) radio on board and few other nice additions. Check Specs below. It replaces this setup:
+## The Button Size Node is a low cost wireless Arduino IDE compatible (the Atmel ATMega328P) microcontroller with RFM 69 HW(CW) radio on board and few other nice additions. Best sutable for Home Automation, IOT. Check Specs below. It replaces this setup:
+
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/replce.jpg?raw=true)
 
 ## Specification: ##
@@ -51,7 +52,10 @@ How to use it as home automation (IOT) node controller
 
 ButtonSizeNode.ino is the Arduino example sketch using [MySensors](https://www.mysensors.org/) API. 
 
-To turn these nodes into home automation network you need at least two Nodes one as a node and the other one as “Gateway Serial” and connect them to a controller (I personally love [Domoticz](https://domoticz.com/)). However, for no-controller setup, as example, you can use 3 nodes - one node as “Gateway Serial”, node as, say relay and one as switch for that relay. No controller needed then, keep the switch and the relay on the same address and the switch will operate the relay.
+Burn the ButtonSizeNode.ino sketch into it an it will became  one of the MySensors home automation network Node. 
+To create the network you need controller and at least two Nodes one as a Sensor, relay or actuator Node and the other one as “Gateway Serial”. I personally love [Domoticz](https://domoticz.com/)) as conroller. Please check this [HowTo](https://github.com/EasySensors/ButtonSizeNode/blob/master/DomoticzInstallMySensors.md) to install Domoticz.
+
+However, for no-controller setup, as example, you can use 3 nodes - first node as “Gateway Serial”, second node as relay and lastone as switch for that relay. No controller needed then, keep the switch and the relay on the same address and the switch will operate the relay.
 
 Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Arduino sketch: 
 
