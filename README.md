@@ -13,7 +13,7 @@
  - Light sensor BH1750,  spectral responsibility is approximately human eye response.
  - Authentication security - Atmel ATSHA204A Crypto Authentication Chip
  - External JDEC EPROM
- - RFM69-HW (high power version) or HC (low power consumption version) 433 MHz Radio transceiver
+ - RFM69-HW (high power version) or CW (low power consumption version) 433 MHz Radio transceiver
  - Battery voltage sensor (via divider)
  - Supply voltage up to 6.5 Volts
  - The Digital and Analog pins are 3.3 volts
