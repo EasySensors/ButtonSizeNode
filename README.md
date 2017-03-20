@@ -56,10 +56,11 @@ ButtonSizeNode.ino is the Arduino example sketch using [MySensors](https://www.m
 
 - **Controller Setup.**  
 Burn the ButtonSizeNode.ino sketch into it an it will became  one of the MySensors home automation network Sensor's Node. 
-To create the network you need controller and at least two Nodes one as a Sensor, a Relay or an Actuator Node and the other one as a “Gateway Serial”. I personally love [Domoticz](https://domoticz.com/) as conroller. Please check this [HowTo](https://github.com/EasySensors/ButtonSizeNode/blob/master/DomoticzInstallMySensors.md) to install Domoticz.
+To create the network you need controller and at least two Nodes one as a Sensor, a Relay or an Actuator Node and the other one as the “Gateway Serial”. I personally love [Domoticz](https://domoticz.com/) as conroller. Please check this [HowTo](https://github.com/EasySensors/ButtonSizeNode/blob/master/DomoticzInstallMySensors.md) to install Domoticz.
 
 - **No Controller setup.** 
-However, for no-controller setup, as example, you can use 3 nodes - first node as a “Gateway Serial”, second node as a Relay and last one as a Switch for that Relay. No controller needed then, keep the Switch and the Relay on the same address and the switch will operate the relay. 
+However, for no-controller setup, as example, you can use 3 nodes - first node as the “Gateway Serial”, second node as a Relay and last one as a Switch for that Relay. No controller needed then, keep the Switch and the Relay on the same address and the switch will operate the relay. 
+
 
 Things worth mentioning about the  [MySensors](https://www.mysensors.org/) Arduino sketch: 
 
