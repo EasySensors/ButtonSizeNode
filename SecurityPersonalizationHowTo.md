@@ -39,6 +39,8 @@ Unconment
 #define USER_KEY
 #define SKIP_UART_CONFIRMATION
 ```
-Upload sketch to the node 
+Upload sketch into the node 
+
 Now you have CryptoAuthentication key written into Atsha204 chip. You can rewrite another one later if you want to change it.
-Done!
+
+**Done!**
