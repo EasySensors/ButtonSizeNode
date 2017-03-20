@@ -22,6 +22,7 @@ Best sutable for Home Automation, IOT. Could be used as core board for radio con
  - Supply voltage up to 6.5 Volts
  - The Digital and Analog pins are 3.3 volts
  - Battery connector CR2032 240mAh
+ - Dualoptiboot bootloader
 
 
 **Pin out:** 
