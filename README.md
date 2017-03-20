@@ -56,7 +56,7 @@ How to use it as home automation (IOT) node controller
 ButtonSizeNode.ino is the Arduino example sketch using [MySensors](https://www.mysensors.org/) API. 
 
 - **Controller Setup.**  
-Burn the ButtonSizeNode.ino sketch into it an it will became  one of the MySensors home automation network Sensor's Node. 
+Burn the ButtonSizeNode.ino sketch into the board and it will became  one of the MySensors home automation network Sensor's Node. 
 To create the network you need controller and at least two Nodes one as a Sensor, a Relay or an Actuator Node and the other one as the “Gateway Serial”. I personally love [Domoticz](https://domoticz.com/) as conroller. Please check this [HowTo](https://github.com/EasySensors/ButtonSizeNode/blob/master/DomoticzInstallMySensors.md) to install Domoticz.
 
 - **No Controller setup.** 
