@@ -46,6 +46,6 @@ Power up Sensor Node (Sketch for this node could be [ButtonSizeNode.ino](https:/
 
 **Done**
 
-> If you use CryptoAuthentication in your nodes, do not forget to  [**“personalize” nodes with encryption key**](https://github.com/EasySensors/ButtonSizeNode/blob/master/SecurityPersonalizationHowTo.md) all the nodes then.
+> If you use CryptoAuthentication in your nodes, do not forget to  [**“personalize” all the nodes with encryption key**](https://github.com/EasySensors/ButtonSizeNode/blob/master/SecurityPersonalizationHowTo.md) then.
 
 Use it
