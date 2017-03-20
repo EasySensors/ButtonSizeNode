@@ -23,7 +23,7 @@ Best sutable for Home Automation, IOT. Could be used as core board for radio con
  - The Digital and Analog pins are 3.3 volts
  - Battery connector CR2032 240mAh
  - Dualoptiboot bootloader. Implements over the air (OTA) firmware update ability
- - You cat cut with scissors, sensors and battery holder part, if you need just controller and radio
+ - You can cut with scissors, sensors and battery holder part, if you need just controller and radio
 
 
 **Pin out:** 
