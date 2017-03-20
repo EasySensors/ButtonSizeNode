@@ -41,7 +41,7 @@ MISO, MOSI, SCK, RST |	Connected to ISP header
 ANT |	RFM69 antenna
 Bat+ | Unregulated power up to 6.5 Volts
 Gnd | Ground
-Scissors line | you cat cut sensors and battery holder if you need just controller and radio
+Scissors line | you cat cut with scissors, sensors and battery holder part, if you need just controller and radio
 
 
 **Arduino IDE Settings**
