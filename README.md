@@ -17,13 +17,13 @@ Best sutable for Home Automation, IOT. Could be used as core board for radio con
  - Light sensor BH1750,  spectral responsibility is approximately human eye response.
  - Authentication security - Atmel ATSHA204A Crypto Authentication Chip
  - External JDEC EPROM
+ - Dualoptiboot bootloader. Implements over the air (OTA) firmware update ability
  - RFM69-HW (high power version) or CW (low power consumption version) 433 MHz Radio transceiver
  - Battery voltage sensor (via divider)
  - Supply voltage up to 6.5 Volts
  - The Digital and Analog pins are 3.3 volts
  - Battery connector CR2032 240mAh
  - FTDI  header for programming
- - Dualoptiboot bootloader. Implements over the air (OTA) firmware update ability
  - You can cut with scissors, sensors and battery holder part, if you need just controller and radio
 
 
