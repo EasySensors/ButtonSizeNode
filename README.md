@@ -76,7 +76,7 @@ Arduino Pins|	Description
 #define MY_OTA_FIRMWARE_FEATURE<br>#define MY_OTA_FLASH_JDECID 0x2020 | Define OTA feature. OTA stands for “Over The Air firmware updates”.<br> If your node does not utilize Sleep mode you can send new “firmware”<br> (compiled sketch binary) by air. [Here is the link on how to do it.](https://www.mysensors.org/about/ota)<br> Skip to the step "How to upload a new sketch just with OTA" as all initial <br> steps have been completed in the ButtonSizeNode. <br>For OTA we use JDEC Flash chip where the node stores<br> new firmware and once it has been  received and checksum (CRC)<br> is correct it reboots and flashes your new<br> code into the node controller.  0x2020 "Erase type"  <br>defined here for JDEC Flash chip . 
 #define MY_SIGNING_ATSHA204 <br>#define  MY_SIGNING_REQUEST_SIGNATURES | Define if you like to use Crypto Authentication to secure your nodes<br> from intruders or interference. After that, you have to “personalize”<br> all the nodes, which have those, defines enabled.<br> [**How to “personalize” nodes with encryption key**](https://github.com/EasySensors/ButtonSizeNode/blob/master/SecurityPersonalizationHowTo.md).<br> You need both defines in the nodes you need to protect.<br> The Gateway Serial could be with only one of those<br> defines enabled - #define MY_SIGNING_ATSHA204
 
-Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board and burn the ButtonSizeNode.ino sketch.
+Connect the Relay to FTDI USB adaptor, Select Pro Mini 8MHz board in Aarduino IDE and upload the ButtonSizeNode.ino sketch.
 
 **Done**
 
