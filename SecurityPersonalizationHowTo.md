@@ -44,3 +44,15 @@ Upload sketch into the node
 Now you have CryptoAuthentication key written into Atsha204 chip. You can rewrite another one later if you want to change it.
 
 **Done!**
+
+Please note:
+
+Your **Node sketch** you want to protect should have: 
+#define MY_SIGNING_ATSHA204 
+#define MY_SIGNING_REQUEST_SIGNATURES
+
+your **Gateway Serial** sketch need basically only this one:
+#define MY_SIGNING_ATSHA204 
+
+
+
