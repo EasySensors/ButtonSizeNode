@@ -80,11 +80,13 @@ Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board in Arduino IDE 
 
 **Done**
 
+
+The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/Koresh)
+
 >For schematics lovers:
 
 ![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/schematic.jpg?raw=true)
 
-The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/Koresh)
 
 P.S.
 Always mind! if your Arduino code fails you need some backup plan. Like some candles and matches in your bathroom... hope you understand.  Start your automation wisely. Like auotomate your doghouse first. Then chicken shed and so on!!!
