@@ -84,6 +84,10 @@ Connect the Node to FTDI USB adaptor, Select Pro Mini 8MHz board in Arduino IDE 
 
 The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/Koresh)
 
+![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/bs1.jpg?raw=true)
+![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/bs2.jpg?raw=true)
+
+
 >For schematics lovers:
 
 ![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/schematic.jpg?raw=true)
