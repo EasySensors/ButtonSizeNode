@@ -33,7 +33,7 @@ Best sutable for Home Automation, IOT. Could be used as core board for radio con
 
 Arduino Pins|	Description
 ------------|--------------
-A0, A1, A2 |	Available ARDUINO analog GPIO / DIGITAL GPIO
+A0, A1 |	Available ARDUINO analog GPIO / DIGITAL GPIO
 A6 |	Connected to Battery voltage sensor (via divider)
 A4 |	Connected to si1132 and bh1750 SDA 
 A5 |	Connected to si1132 and bh1750 SCL
