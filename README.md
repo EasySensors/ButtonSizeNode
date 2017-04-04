@@ -6,7 +6,7 @@
 **The Button Size Node is a low cost wireless Arduino IDE compatible (the Atmel ATMega328P 8MHz) microcontroller with RFM 69 HW(CW) radio on board and few other nice additions.** 
 ------------------------------------------------------------------------
 
-Best sutable for Home Automation, IOT. Could be used as core board for radio controlling any DIY project. Check Specs below. It replaces this setup:
+Best sutable for Home Automation, IOT. Could be used as core board for radio controlling any DIY project. You may think of it as Arduino Pro Mini plus all the items in the picture below::
 
 ![](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/replceA.jpg?raw=true)
 
