@@ -10,12 +10,18 @@
 // Enable and select radio type attached
 #define MY_RADIO_RFM69
 #define MY_RFM69_FREQUENCY   RF69_433MHZ
+
+// Comment it out for CW  Version Radio.
 #define MY_IS_RFM69HW
 
-#define MY_NODE_ID 0xE0
+// Comment it out for Auto Node ID #
+#define MY_NODE_ID 0xE0 // 
+
+//Enable OTA feature
 #define MY_OTA_FIRMWARE_FEATURE
 #define MY_OTA_FLASH_JDECID 0x2020
 
+//Enable Crypto Authentication to secure the node
 #define MY_SIGNING_ATSHA204
 #define  MY_SIGNING_REQUEST_SIGNATURES
 
@@ -78,16 +84,16 @@ void swarm_report()
   dtostrf(sensor.getTemp(),0,2,tempSi7021);
  
   send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
-  wait(30);
+  wait(50);
   send(msg_hum.set(humiditySi7021), true); // Send humiditySi7021     sensor readings
-  wait(30);
+  wait(50);
   dtostrf(lux,5,0,VIS_LIGHT);
   send(msg_vis.set(VIS_LIGHT), true); // Send LIGHT BH1750     sensor readings
-  wait(30);
+  wait(50);
 }
 
 void before() {
-    //we do not need watch dog enabled in case of battery power.
+    //No need watch dog enabled in case of battery power.
     //wdt_enable(WDTO_4S);
     wdt_disable();
     lightMeter.begin();
@@ -111,7 +117,7 @@ unsigned long wdiDelay  = 0;
 
 void loop()
 {
-  //we do not need watch dog in case of battery power.
+  //No need watch dog in case of battery power.
   //wdt_reset();
   
   swarm_report();      
