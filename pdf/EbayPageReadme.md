@@ -28,7 +28,7 @@ If you are familiar with Arduino boards, the ButtonSize Node is Arduino pro Mini
 ![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/bs1.jpg?raw=true)
 ![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/bs2.jpg?raw=true)
  
-Package Content:
-•	The Controller board 1 pcs  
+##Package Content:
+-	The Controller board 1 pcs  
 
   
