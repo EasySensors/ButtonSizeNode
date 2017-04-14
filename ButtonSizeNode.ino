@@ -1,3 +1,23 @@
+/**
+ * The MySensors Arduino library handles the wireless radio link and protocol
+ * between your home built sensors/actuators and HA controller of choice.
+ * The sensors forms a self healing radio network with optional repeaters. Each
+ * repeater and gateway builds a routing tables in EEPROM which keeps track of the
+ * network topology allowing messages to be routed to nodes.
+ *
+ * Created by Henrik Ekblad <henrik.ekblad@mysensors.org>
+ * Copyright (C) 2013-2015 Sensnology AB
+ * Full contributor list: https://github.com/mysensors/Arduino/graphs/contributors
+ *
+ * Documentation: http://www.mysensors.org
+ * Support Forum: http://forum.mysensors.org
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * version 2 as published by the Free Software Foundation.
+ *
+**/
+
 // Enable debug prints to serial monitor
 #define MY_DEBUG
 
@@ -11,21 +31,23 @@
 #define MY_RADIO_RFM69
 #define MY_RFM69_FREQUENCY   RF69_433MHZ
 
-// Comment it out for CW  Version Radio.
+// Comment it out for CW  version radio.
 #define MY_IS_RFM69HW
 
 // Comment it out for Auto Node ID #
-#define MY_NODE_ID 0xE0 // 
+#define MY_NODE_ID 0xAA
 
 //Enable OTA feature
 #define MY_OTA_FIRMWARE_FEATURE
 #define MY_OTA_FLASH_JDECID 0x2020
 
 //Enable Crypto Authentication to secure the node
-#define MY_SIGNING_ATSHA204
-#define  MY_SIGNING_REQUEST_SIGNATURES
+//#define MY_SIGNING_ATSHA204
+//#define  MY_SIGNING_REQUEST_SIGNATURES
 
 #include <Wire.h>
+
+// Written by Christopher Laws, March, 2013.
 #include <BH1750.h>
 BH1750 lightMeter;
 
@@ -66,12 +88,6 @@ void swarm_report()
   char tempSi7021[10];
   char VIS_LIGHT[10];
   uint16_t lux = lightMeter.readLightLevel();// Get Lux value
-
-  //RFM module has it is own temp sensor. We can use it although it is not very accurate
-  //int temp_int = (int)_radio.readTemperature(0);
-  //Serial.print( "\t  radio.readTemperature: " ); Serial.println( temp_int );
-  //send(msg_temp.set(temp_int), true); 
-  //wait(30);
 
   // Measure Relative Humidity from the HTU21D or Si7021
   // dtostrf(); converts float into string
