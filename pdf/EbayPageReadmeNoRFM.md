@@ -1,6 +1,4 @@
-
-
-### The ButtonSize Node is a low cost wireless Arduino IDE compatible (the Atmel ATMega328P) microcontroller with RFM 69 CW or HW 433 MHz radio on board and build in Temperature, Humidity and Light sensors. Best suitable for Home Automation, IOT. The board can be used as universal sensor board for radio controlling any DIY project.
+### The ButtonSize Node is a low cost Arduino IDE compatible (the Atmel ATMega328P) microcontroller. Ready RFM 69 CW or HW radio on board. Build in Temperature, Humidity and Light sensors. Best suitable for Home Automation, IOT. The board can be used as universal sensor board for radio controlling any DIY project.
 
 ## Features
 - Fully compatible with the Arduino IDE (PRO MINI 8 MG Hz)
@@ -8,7 +6,7 @@
 - Temperature and humidity sensor Si7021
 - Light sensor BH1750, spectral responsibility is approximately human eye response.
 - Over the Air, firmware updates (OTA) ready. In combination with preprogrammed Dual Optiboot boot loader and External JDEC EPROM\Flash memory chip on board the Node allows OTA software updates.
-- Onboard RFM69-HW (high power version) or CW (low power consumption version) 433 MHz Radio transceiver with wire antenna
+- Ready for RFM69-HW or CW (via with PCB adapter) Radio transceiver with wire antenna
 - Onboard Atmel ATSHA204A CryptoAuthentication chip makes communication with the Node very secured. ATSHA204A implements secured handshake and if handshake fails the Node will not executing any command sent to it
 - Programming header is FTDI, TTL Serial. For programming, you need to have USB TTL Serial – FTDI adaptor
 - ENIG Emersion Gold finish
