@@ -32,10 +32,16 @@
 #define MY_RFM69_FREQUENCY   RF69_433MHZ
 
 // Comment it out for CW  version radio.
-#define MY_IS_RFM69HW
+//#define MY_IS_RFM69HW
 
 // Comment it out for Auto Node ID #
 #define MY_NODE_ID 0xAA
+
+// Avoid battery drain if Gateway disconnected and the node sends more than MY_TRANSPORT_STATE_RETRIES times message.
+#define MY_TRANSPORT_UPLINK_CHECK_DISABLED
+#define MY_PARENT_NODE_IS_STATIC
+#define MY_PARENT_NODE_ID 0
+
 
 //Enable OTA feature
 #define MY_OTA_FIRMWARE_FEATURE
@@ -137,6 +143,9 @@ void loop()
   //wdt_reset();
   
   swarm_report();      
+
+  lightMeter.write8(BH1750_POWER_DOWN);
+  
   // Go sleep for some milliseconds
   sleep(60000);
 }
