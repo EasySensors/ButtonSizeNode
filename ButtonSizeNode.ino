@@ -93,6 +93,8 @@ void swarm_report()
   char humiditySi7021[10];
   char tempSi7021[10];
   char VIS_LIGHT[10];
+
+  lightMeter.begin(); // need for correct wake up
   uint16_t lux = lightMeter.readLightLevel();// Get Lux value
 
   // Measure Relative Humidity from the HTU21D or Si7021
@@ -144,6 +146,14 @@ void loop()
   
   swarm_report();      
 
+  /*  Please comment out private declaration in BH1750.h 
+   *   Otherwise you can't call lightMeter.write8(BH1750_POWER_DOWN); and BH1750 will not sleep!
+   *   
+   *  //private:
+   *   void write8(uint8_t data);
+   * 
+   */
+   
   lightMeter.write8(BH1750_POWER_DOWN);
   
   // Go sleep for some milliseconds
