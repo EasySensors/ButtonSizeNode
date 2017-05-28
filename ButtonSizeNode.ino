@@ -87,36 +87,83 @@ MyMessage msg_uv(UV_sensor, V_UV);
 
 unsigned long wdiDelay2  = 0;
 
+int BATTERY_SENSE_PIN = A6;  // select the input pin for the battery sense point
+
+uint16_t oldLux = 0, lux;
+static uint16_t oldHumdty = 0, humdty;
+static uint16_t oldTemp = 0, temp;
+
 void swarm_report()
 {
-  char temp_txt[10];
+  static int oldBatteryPcnt = 0;
   char humiditySi7021[10];
   char tempSi7021[10];
   char VIS_LIGHT[10];
 
+  // Get the battery Voltage
+  int sensorValue = analogRead(BATTERY_SENSE_PIN);
+  // 1M, 470K divider across battery and using internal ADC ref of 1.1V1
+  // ((1e6+470e3)/470e3)*1.1 = Vmax = 3.44 Volts
+  /* The MySensors Lib uses internal ADC ref of 1.1V which means analogRead of the pin connected to 470kOhms Battery Devider reaches  
+   * 1023 when voltage on the divider is around 3.44 Volts. 2.5 volts is equal to 750. 2 volts is equal to 600. 
+   * RFM 69 CW works stable up to 2 volts. Assume 2.5 V is 0% and 1023 is 100% battery charge    
+   * RFM 69 HCW works stable up to 2.5 volts (sometimes it can work up to 2.0V). Assume 2.5 V is 0% and 1023 is 100% battery charge  
+   * 3.3V ~ 1023
+   * 3.0V ~ 900
+   * 2.5V ~ 750 
+   * 2.0V ~ 600
+   */
+
+  //Serial.print("sensorValue: "); Serial.println(sensorValue); 
+#ifdef  MY_IS_RFM69HW
+  int batteryPcnt = (sensorValue - 750)  / 1.5;
+#else
+  int batteryPcnt = (sensorValue - 600)  / 3;
+#endif
+
+  
+  batteryPcnt = batteryPcnt > 0 ? batteryPcnt:0; // Cut down negative values. Just in case the battery goes below 2V (2.5V) and the node still working. 
+  batteryPcnt = batteryPcnt < 100 ? batteryPcnt:100; // Cut down more than "100%" values. In case of ADC fluctuations. 
+
+  if (oldBatteryPcnt != batteryPcnt ) {
+    // Power up radio after sleep
+    sendBatteryLevel(batteryPcnt);
+    oldBatteryPcnt = batteryPcnt;
+  }
+
+
   lightMeter.begin(); // need for correct wake up
-  uint16_t lux = lightMeter.readLightLevel();// Get Lux value
-
-  // Measure Relative Humidity from the HTU21D or Si7021
+  lux = lightMeter.readLightLevel();// Get Lux value
   // dtostrf(); converts float into string
-  dtostrf(sensor.getRH(),0,2,humiditySi7021);  
+  long d = (long)(lux - oldLux);
+  Serial.print("abs(lux - oldLux)="); Serial.print(abs(d)); Serial.print(" lux ="); Serial.print(lux); Serial.print(" oldLux ="); Serial.println(oldLux); 
+  dtostrf(lux,5,0,VIS_LIGHT);
+  if ( abs(d) > 50 ) send(msg_vis.set(VIS_LIGHT), true); // Send LIGHT BH1750     sensor readings
+  oldLux = lux;
+  wait(50);
 
-  // Measure Temperature from the HTU21D or Si7021
+   
+  // Measure Relative Humidity from the Si7021
+  humdty = sensor.getRH();
+  dtostrf(humdty,0,2,humiditySi7021);  
+  if (humdty != oldHumdty) send(msg_hum.set(humiditySi7021), true); // Send humiditySi7021     sensor readings
+  oldHumdty = humdty; 
+  wait(50);
+  
+  
+  // Measure Temperature from the Si7021
   // Temperature is measured every time RH is requested.
   // It is faster, therefore, to read it from previous RH
   // measurement with getTemp() instead with readTemp()
-  dtostrf(sensor.getTemp(),0,2,tempSi7021);
- 
-  send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
-  wait(50);
-  send(msg_hum.set(humiditySi7021), true); // Send humiditySi7021     sensor readings
-  wait(50);
-  dtostrf(lux,5,0,VIS_LIGHT);
-  send(msg_vis.set(VIS_LIGHT), true); // Send LIGHT BH1750     sensor readings
+  temp = sensor.getTemp();
+  dtostrf(temp,0,2,tempSi7021);
+  if (temp != oldTemp) send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
+  oldTemp = temp;
   wait(50);
 }
 
 void before() {
+    analogReference(INTERNAL); // using internal ADC ref of 1.1V
     //No need watch dog enabled in case of battery power.
     //wdt_enable(WDTO_4S);
     wdt_disable();
@@ -151,12 +198,11 @@ void loop()
    *   
    *  //private:
    *   void write8(uint8_t data);
-   * 
    */
    
   lightMeter.write8(BH1750_POWER_DOWN);
   
   // Go sleep for some milliseconds
-  sleep(60000);
+  sleep(600000);
 }
 
