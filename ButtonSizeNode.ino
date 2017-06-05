@@ -21,7 +21,7 @@
 // Enable debug prints to serial monitor
 #define MY_DEBUG
 
-#include <MemoryFree.h>
+
 #include <avr/wdt.h>
 #ifdef __AVR__
   #include <avr/power.h>
