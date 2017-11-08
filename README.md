@@ -52,6 +52,11 @@ Scissors line | you cat cut with scissors, sensors and battery holder part, if y
 ![Arduino IDE Settings](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/IDEsettings.jpg?raw=true)
 
 
+**Serial to TTL connection**
+
+![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/FTDIvcc5-3.jpg?raw=true)
+
+Both 3.3V and 5V power options can be used.
 
 How to use it as home automation (IOT) node controller
 ------------------------------------------------------
