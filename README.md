@@ -101,5 +101,3 @@ The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/
 
 [**The board schematics Pdf link**](https://github.com/EasySensors/ButtonSizeNode/blob/master/pdf/ButtonSizeNodeNew.pdf)
 
-
-P.S. Always mind! if your Arduino code fails you need some backup plan. Put some candles and matches in your bathroom )))))... hope you understand. Start your automation wisely. Like auotomate your doghouse first. Then checkenshed and so on!!!
