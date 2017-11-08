@@ -1,0 +1,40 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# buttonSizeNodeV2.0
+#
+DEF buttonSizeNodeV2.0 U 0 40 Y Y 1 F N
+F0 "U" 300 50 60 H V C CNN
+F1 "buttonSizeNodeV2.0" -250 50 60 H V C CNN
+F2 "" -250 50 60 H I C CNN
+F3 "" -250 50 60 H I C CNN
+DRAW
+S -700 -50 -700 -50 0 1 0 N
+S -700 -50 -700 -50 0 1 0 N
+S -700 -50 -700 -50 0 1 0 N
+S -700 -50 250 -850 0 1 0 N
+X A0 ~ -250 -1050 200 U 50 50 1 1 I
+X A1 ~ -150 -1050 200 U 50 50 1 1 I
+X ant ~ 50 -1050 200 U 50 50 1 1 I
+X bat+ ~ 450 -200 200 L 50 50 1 1 I
+X bat+ ~ 450 -100 200 L 50 50 1 1 I
+X d3 ~ -900 -100 200 R 50 50 1 1 I
+X d4 ~ -900 -200 200 R 50 50 1 1 I
+X d5 ~ -900 -300 200 R 50 50 1 1 I
+X d6 ~ -900 -400 200 R 50 50 1 1 I
+X d7 ~ -900 -500 200 R 50 50 1 1 I
+X d8 ~ -900 -600 200 R 50 50 1 1 I
+X dtr ~ 450 -800 200 L 50 50 1 1 I
+X gnd ~ 450 -400 200 L 50 50 1 1 I
+X gnd ~ 450 -300 200 L 50 50 1 1 I
+X miso ~ -450 -1050 200 U 50 50 1 1 I
+X mosi ~ -900 -700 200 R 50 50 1 1 I
+X rst ~ -50 -1050 200 U 50 50 1 1 I
+X Rx ~ 450 -600 200 L 50 50 1 1 I
+X sck ~ -350 -1050 200 U 50 50 1 1 I
+X Tx ~ 450 -700 200 L 50 50 1 1 I
+X vcc ~ 450 -500 200 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

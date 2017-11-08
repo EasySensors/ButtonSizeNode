@@ -35,7 +35,7 @@
 //#define MY_IS_RFM69HW
 
 // Comment it out for Auto Node ID #
-#define MY_NODE_ID 0xAA
+#define MY_NODE_ID 0xA5
 
 // Avoid battery drain if Gateway disconnected and the node sends more than MY_TRANSPORT_STATE_RETRIES times message.
 #define MY_TRANSPORT_UPLINK_CHECK_DISABLED
@@ -45,7 +45,7 @@
 
 //Enable OTA feature
 #define MY_OTA_FIRMWARE_FEATURE
-#define MY_OTA_FLASH_JDECID 0x2020
+#define MY_OTA_FLASH_JDECID 0  //0x2020
 
 //Enable Crypto Authentication to secure the node
 //#define MY_SIGNING_ATSHA204
@@ -176,7 +176,7 @@ void setup() {
 void presentation() 
 {  
   // Send the sketch version information to the gateway and Controller
-  sendSketchInfo("ButtonSize node", "111.0");
+  sendSketchInfo("ButtonSize node", "1.0");
 
   // Register all sensors to gw (they will be created as child devices)
   present(HUM_sensor, S_HUM);
