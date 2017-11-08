@@ -42,7 +42,7 @@ D3, D4, D5, D6,D7, D9 |	Available ARDUINO digital GPIO
 D8 |	Connected to CS FLASH chip (OTA) M25P40
 MISO, MOSI, SCK, RST |	Connected to ISP header
 ANT |	RFM69 antenna
-Bat+ | Unregulated power up to 6.5 Volts
+Vcc and Bat+ | Unregulated power up to 6.5 Volts
 Gnd | Ground
 Scissors line | you cat cut with scissors, sensors and battery holder part, if you need just controller and radio
 
@@ -92,9 +92,9 @@ The board is created by  [Koresh](https://www.openhardware.io/user/143/projects/
 
 >For schematics lovers:
 
-![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/schematic.jpg?raw=true)
+![enter image description here](https://github.com/EasySensors/ButtonSizeNode/blob/master/pics/schematicNew.jpg?raw=true)
 
-[**The board schematics Pdf link**](https://github.com/EasySensors/ButtonSizeNode/blob/master/pdf/ButtonSizeNode_ext1.pdf)
+[**The board schematics Pdf link**](https://github.com/EasySensors/ButtonSizeNode/blob/master/pdf/ButtonSizeNodeNew.pdf)
 
 
 P.S. Always mind! if your Arduino code fails you need some backup plan. Put some candles and matches in your bathroom )))))... hope you understand. Start your automation wisely. Like auotomate your doghouse first. Then checkenshed and so on!!!
