@@ -12,6 +12,7 @@ Best sutable for Home Automation, IOT. Could be used as core board for radio con
 
 ## Specification: ##
  - Dimensions 42.2mm x 20.9mm
+ - Sleep current consumption 10 - 12 uA
  - Temperature and humidity sensor Si7021 
  - High Accuracy Temperature Sensor ±0.4 °C (max), –10 to 85 °C
  - Precision Relative Humidity Sensor ± 3% RH (max), 0–80% RH
