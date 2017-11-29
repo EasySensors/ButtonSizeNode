@@ -21,7 +21,7 @@
 // Enable debug prints to serial monitor
 #define MY_DEBUG
 
-
+#include <MemoryFree.h>
 #include <avr/wdt.h>
 #ifdef __AVR__
   #include <avr/power.h>
@@ -163,11 +163,11 @@ void swarm_report()
 }
 
 void before() {
-    analogReference(INTERNAL); // using internal ADC ref of 1.1V
-    //No need watch dog enabled in case of battery power.
-    //wdt_enable(WDTO_4S);
-    wdt_disable();
-    lightMeter.begin();
+  analogReference(INTERNAL); // using internal ADC ref of 1.1V
+  //No need watch dog enabled in case of battery power.
+  //wdt_enable(WDTO_4S);
+  wdt_disable();
+  lightMeter.begin();
 }
 
 void setup() {
@@ -186,11 +186,11 @@ void presentation()
 
 unsigned long wdiDelay  = 0;
 
-void loop()
-{
+void loop(){
   //No need watch dog in case of battery power.
   //wdt_reset();
-  
+
+  _flash.wakeup();
   swarm_report();      
 
   /*  Please comment out private declaration in BH1750.h 
@@ -203,6 +203,7 @@ void loop()
   lightMeter.write8(BH1750_POWER_DOWN);
   
   // Go sleep for some milliseconds
+  _flash.sleep();
   sleep(600000);
 }
 
