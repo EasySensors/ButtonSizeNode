@@ -89,9 +89,9 @@ unsigned long wdiDelay2  = 0;
 
 int BATTERY_SENSE_PIN = A6;  // select the input pin for the battery sense point
 
-uint16_t oldLux = 0, lux;
-static uint16_t oldHumdty = 0, humdty;
-static uint16_t oldTemp = 0, temp;
+static int32_t oldLux = 0, lux;
+static int16_t oldHumdty = 0, humdty;
+static int16_t oldTemp = 0, temp;
 
 void swarm_report()
 {
