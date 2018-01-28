@@ -100,6 +100,37 @@ void swarm_report()
   char tempSi7021[10];
   char VIS_LIGHT[10];
 
+
+  lightMeter.begin(); // need for correct wake up
+  lux = lightMeter.readLightLevel();// Get Lux value
+  // dtostrf(); converts float into string
+  long d = (long)(lux - oldLux);
+  Serial.print("abs(lux - oldLux)="); Serial.print(abs(d)); Serial.print(" lux ="); Serial.print(lux); Serial.print(" oldLux ="); Serial.println(oldLux); 
+  dtostrf(lux,5,0,VIS_LIGHT);
+  if ( abs(d) > 50 ) send(msg_vis.set(VIS_LIGHT), true); // Send LIGHT BH1750     sensor readings
+  oldLux = lux;
+  sleep(100);
+
+   
+  // Measure Relative Humidity from the Si7021
+  humdty = sensor.getRH();
+  dtostrf(humdty,0,2,humiditySi7021);  
+  if (humdty != oldHumdty) send(msg_hum.set(humiditySi7021), true); // Send humiditySi7021     sensor readings
+  oldHumdty = humdty; 
+  sleep(100);
+  
+  
+  // Measure Temperature from the Si7021
+  // Temperature is measured every time RH is requested.
+  // It is faster, therefore, to read it from previous RH
+  // measurement with getTemp() instead with readTemp()
+  temp = sensor.getTemp();
+  dtostrf(temp,0,2,tempSi7021);
+  if (temp != oldTemp) send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
+  oldTemp = temp;
+  1;
+
+
   // Get the battery Voltage
   int sensorValue = analogRead(BATTERY_SENSE_PIN);
   // 1M, 470K divider across battery and using internal ADC ref of 1.1V1
@@ -114,52 +145,19 @@ void swarm_report()
    * 2.0V ~ 600
    */
 
-  //Serial.print("sensorValue: "); Serial.println(sensorValue); 
 #ifdef  MY_IS_RFM69HW
   int batteryPcnt = (sensorValue - 750)  / 1.5;
 #else
   int batteryPcnt = (sensorValue - 600)  / 3;
 #endif
-
   
   batteryPcnt = batteryPcnt > 0 ? batteryPcnt:0; // Cut down negative values. Just in case the battery goes below 2V (2.5V) and the node still working. 
   batteryPcnt = batteryPcnt < 100 ? batteryPcnt:100; // Cut down more than "100%" values. In case of ADC fluctuations. 
 
   if (oldBatteryPcnt != batteryPcnt ) {
-    // Power up radio after sleep
     sendBatteryLevel(batteryPcnt);
     oldBatteryPcnt = batteryPcnt;
   }
-
-
-  lightMeter.begin(); // need for correct wake up
-  lux = lightMeter.readLightLevel();// Get Lux value
-  // dtostrf(); converts float into string
-  long d = (long)(lux - oldLux);
-  Serial.print("abs(lux - oldLux)="); Serial.print(abs(d)); Serial.print(" lux ="); Serial.print(lux); Serial.print(" oldLux ="); Serial.println(oldLux); 
-  dtostrf(lux,5,0,VIS_LIGHT);
-  if ( abs(d) > 50 ) send(msg_vis.set(VIS_LIGHT), true); // Send LIGHT BH1750     sensor readings
-  oldLux = lux;
-  wait(50);
-
-   
-  // Measure Relative Humidity from the Si7021
-  humdty = sensor.getRH();
-  dtostrf(humdty,0,2,humiditySi7021);  
-  if (humdty != oldHumdty) send(msg_hum.set(humiditySi7021), true); // Send humiditySi7021     sensor readings
-  oldHumdty = humdty; 
-  wait(50);
-  
-  
-  // Measure Temperature from the Si7021
-  // Temperature is measured every time RH is requested.
-  // It is faster, therefore, to read it from previous RH
-  // measurement with getTemp() instead with readTemp()
-  temp = sensor.getTemp();
-  dtostrf(temp,0,2,tempSi7021);
-  if (temp != oldTemp) send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
-  oldTemp = temp;
-  wait(50);
 }
 
 void before() {
@@ -168,6 +166,16 @@ void before() {
   //wdt_enable(WDTO_4S);
   wdt_disable();
   lightMeter.begin();
+
+/* Send JDEC to sleep 
+ *  all of _flash.initialize(); _flash.sleep(); and _flash.wakeup();
+ *  need to be wrapped with noInterrupts(); - interrupts();
+ */
+  noInterrupts();
+  _flash.initialize();
+  _flash.sleep();
+  interrupts();
+  
 }
 
 void setup() {
@@ -190,7 +198,6 @@ void loop(){
   //No need watch dog in case of battery power.
   //wdt_reset();
 
-  _flash.wakeup();
   swarm_report();      
 
   /*  Please comment out private declaration in BH1750.h 
@@ -203,7 +210,5 @@ void loop(){
   lightMeter.write8(BH1750_POWER_DOWN);
   
   // Go sleep for some milliseconds
-  _flash.sleep();
-  sleep(600000);
 }
 
