@@ -210,5 +210,6 @@ void loop(){
   lightMeter.write8(BH1750_POWER_DOWN);
   
   // Go sleep for some milliseconds
+  sleep(300000);
 }
 
