@@ -1,0 +1,23 @@
+
+1. Remove ALS_AUTO command in the initialization code. 
+2. Issue ALS_FORCE command every time the host wants to take a measurement
+3. The delay time depends on your configuration and how often the host wants to take a measurement. Normally, 5ms ~ 10ms is more than enough.
+
+Comment out this line of code as you're using forced mode: write8(Si1132_REG_MEASRATE0, 0xFF). Leave MEASRATE to 0.
+Also, you don't need to call write8(Si1132_REG_COMMAND, Si1132_ALS_PAUSE) in forced mode.
+
+
+boolean ODROID_Si1132::begin(void)
+
+	//write8(Si1132_REG_MEASRATE0, 0xFF);
+	//write8(Si1132_REG_COMMAND, Si1132_ALS_AUTO);
+
+
+
+uint16_t ODROID_Si1132::readUV()
+{
+	write8(Si1132_REG_COMMAND, Si1132_ALS_FORCE);
+	delay(10);
+	return read16(0x2c);
+}
+
