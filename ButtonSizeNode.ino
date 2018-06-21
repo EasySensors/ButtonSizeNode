@@ -82,8 +82,6 @@ Weather sensor;
 
 #include <stdlib.h>
 
-#define RELAY_pin 7 // Digital pin connected to relay
-
 
 // Assign numbers for all sensors we will report to gateway\controller (they will be created as child devices)
 #define HUM_sensor 2
@@ -113,7 +111,7 @@ void swarm_report()
   char VIS_LIGHT[10];
 
 
-  lightMeter.begin(); // need for correct wake up
+  lightMeter.begin(BH1750::ONE_TIME_LOW_RES_MODE); // need for correct wake up
   lux = lightMeter.readLightLevel();// Get Lux value
   // dtostrf(); converts float into string
   long d = (long)(lux - oldLux);
@@ -140,6 +138,7 @@ void swarm_report()
   dtostrf(temp,0,2,tempSi7021);
   if (temp != oldTemp) send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
   oldTemp = temp;
+  sleep(100);
 
 
   // Get the battery Voltage
