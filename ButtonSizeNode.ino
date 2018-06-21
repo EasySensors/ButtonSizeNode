@@ -29,13 +29,23 @@
 
 // Enable and select radio type attached
 #define MY_RADIO_RFM69
-#define MY_RFM69_FREQUENCY   RF69_433MHZ
+
+
+// if you use MySensors 2.0 use this style 
+//#define MY_RFM69_FREQUENCY   RF69_433MHZ
+//#define MY_RFM69_FREQUENCY   RF69_868MHZ
+//#define MY_RFM69_FREQUENCY   RF69_915MHZ
+
+
+#define MY_RFM69_FREQUENCY   RFM69_433MHZ
+//#define MY_RFM69_FREQUENCY   RFM69_868MHZ
+
 
 // Comment it out for CW  version radio.
 //#define MY_IS_RFM69HW
 
 // Comment it out for Auto Node ID #
-#define MY_NODE_ID 0xA5
+#define MY_NODE_ID 0xA9
 
 // Avoid battery drain if Gateway disconnected and the node sends more than MY_TRANSPORT_STATE_RETRIES times message.
 #define MY_TRANSPORT_UPLINK_CHECK_DISABLED
@@ -54,6 +64,8 @@
 #include <Wire.h>
 
 // Written by Christopher Laws, March, 2013.
+// https://github.com/claws/BH1750
+
 #include <BH1750.h>
 BH1750 lightMeter;
 
@@ -83,7 +95,7 @@ Weather sensor;
 MyMessage msg_hum(HUM_sensor, V_HUM);
 MyMessage msg_temp(TEMP_sensor, V_TEMP);
 MyMessage msg_vis(VIS_sensor, V_LIGHT_LEVEL);
-MyMessage msg_uv(UV_sensor, V_UV);
+//MyMessage msg_uv(UV_sensor, V_UV);
 
 unsigned long wdiDelay2  = 0;
 
@@ -128,7 +140,6 @@ void swarm_report()
   dtostrf(temp,0,2,tempSi7021);
   if (temp != oldTemp) send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
   oldTemp = temp;
-  1;
 
 
   // Get the battery Voltage
@@ -165,7 +176,7 @@ void before() {
   //No need watch dog enabled in case of battery power.
   //wdt_enable(WDTO_4S);
   wdt_disable();
-  lightMeter.begin();
+  lightMeter.begin(BH1750::ONE_TIME_LOW_RES_MODE);
 
 /* Send JDEC to sleep 
  *  all of _flash.initialize(); _flash.sleep(); and _flash.wakeup();
@@ -197,19 +208,13 @@ unsigned long wdiDelay  = 0;
 void loop(){
   //No need watch dog in case of battery power.
   //wdt_reset();
-
+  _flash.wakeup();
+  
   swarm_report();      
 
-  /*  Please comment out private declaration in BH1750.h 
-   *   Otherwise you can't call lightMeter.write8(BH1750_POWER_DOWN); and BH1750 will not sleep!
-   *   
-   *  //private:
-   *   void write8(uint8_t data);
-   */
-   
-  lightMeter.write8(BH1750_POWER_DOWN);
   
   // Go sleep for some milliseconds
+  _flash.sleep();
   sleep(300000);
 }
 
