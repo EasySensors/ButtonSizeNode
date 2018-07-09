@@ -21,7 +21,7 @@
 // Enable debug prints to serial monitor
 #define MY_DEBUG
 
-#include <MemoryFree.h>
+
 #include <avr/wdt.h>
 #ifdef __AVR__
   #include <avr/power.h>
@@ -108,7 +108,7 @@ void swarm_report()
   static int oldBatteryPcnt = 0;
   char humiditySi7021[10];
   char tempSi7021[10];
-  char VIS_LIGHT[10];
+  char visualLight[10];
 
 
   lightMeter.begin(BH1750::ONE_TIME_LOW_RES_MODE); // need for correct wake up
@@ -116,19 +116,23 @@ void swarm_report()
   // dtostrf(); converts float into string
   long d = (long)(lux - oldLux);
   Serial.print("abs(lux - oldLux)="); Serial.print(abs(d)); Serial.print(" lux ="); Serial.print(lux); Serial.print(" oldLux ="); Serial.println(oldLux); 
-  dtostrf(lux,5,0,VIS_LIGHT);
-  if ( abs(d) > 50 ) send(msg_vis.set(VIS_LIGHT), true); // Send LIGHT BH1750     sensor readings
-  oldLux = lux;
-  sleep(100);
+  dtostrf(lux,5,0,visualLight);
+  if ( abs(d) > 50 ) {
+    send(msg_vis.set(visualLight), true);  // Send LIGHT BH1750     sensor readings
+    oldLux = lux;
+  }
 
    
   // Measure Relative Humidity from the Si7021
   humdty = sensor.getRH();
   dtostrf(humdty,0,2,humiditySi7021);  
-  if (humdty != oldHumdty) send(msg_hum.set(humiditySi7021), true); // Send humiditySi7021     sensor readings
-  oldHumdty = humdty; 
-  sleep(100);
-  
+  if (humdty != oldHumdty) {
+    // this wait(); is 2.0 and up RFM69 specific. Hope to get rid of it soon
+    wait(100);
+    send(msg_hum.set(humiditySi7021), true); // Send humiditySi7021     sensor readings
+    oldHumdty = humdty; 
+  }
+
   
   // Measure Temperature from the Si7021
   // Temperature is measured every time RH is requested.
@@ -136,9 +140,17 @@ void swarm_report()
   // measurement with getTemp() instead with readTemp()
   temp = sensor.getTemp();
   dtostrf(temp,0,2,tempSi7021);
+<<<<<<< HEAD
+  if (temp != oldTemp) {
+    wait(100);
+    send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
+    oldTemp = temp;
+  }
+=======
   if (temp != oldTemp) send(msg_temp.set(tempSi7021), true); // Send tempSi7021 temp sensor readings
   oldTemp = temp;
   sleep(100);
+>>>>>>> origin/master
 
 
   // Get the battery Voltage
@@ -165,6 +177,7 @@ void swarm_report()
   batteryPcnt = batteryPcnt < 100 ? batteryPcnt:100; // Cut down more than "100%" values. In case of ADC fluctuations. 
 
   if (oldBatteryPcnt != batteryPcnt ) {
+    wait(100);
     sendBatteryLevel(batteryPcnt);
     oldBatteryPcnt = batteryPcnt;
   }
